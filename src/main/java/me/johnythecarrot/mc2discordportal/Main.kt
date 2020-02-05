@@ -35,9 +35,8 @@ class Main : JavaPlugin(), Listener {
             addDefault("enable_this_when_config_is_setup_and_valid", false)
             addDefault("webhook_url", "token here")
             addDefault("bot_token", "a.real.token")
-            //addDefault("message_avatar_url", "http://dootdoot.tk/picsforbot/chat.png")
-            addDefault("server_join_avatar", "http://dootdoot.tk/picsforbot/login.png")
-            addDefault("server_leave_avatar", "http://dootdoot.tk/picsforbot/exit.png")
+            addDefault("server_join_avatar", "default")
+            addDefault("server_leave_avatar", "default")
             addDefault("system_message_name", "Server")
             addDefault("discord_channel_id_to_listen_to", "123456789")
             addDefault("channel_topic",
