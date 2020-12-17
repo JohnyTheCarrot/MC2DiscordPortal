@@ -17,9 +17,8 @@ class Discord2MC : ListenerAdapter() {
             var italic = currentlyItalic
 
             val boldReg = Regex("\\*\\*(\\*?(?:(?!\\*\\*).)+\\*?)\\*\\*")
-            var endString: String
             boldReg.findAll(str).forEach { _ -> bold = true; return@forEach }
-            endString = boldReg.replace(str) {
+            var endString: String = boldReg.replace(str) {
                 m -> "§l" + markdown(m.groupValues[1], bold, currentlyItalic) + "§r" + if (currentlyItalic) "§o" else ""
             }
             val italicReg = Regex("\\*((?:(?!\\*).)+)\\*")

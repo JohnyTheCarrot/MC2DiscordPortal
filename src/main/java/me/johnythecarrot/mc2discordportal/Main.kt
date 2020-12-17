@@ -48,9 +48,9 @@ class Main : JavaPlugin(), Listener {
         }
         saveConfig()
         if (config.getBoolean("enable_this_when_config_is_setup_and_valid")) {
-            jda = JDABuilder(config.getString("bot_token"))
-                    .addEventListeners(Discord2MC())
-                    .build()
+            jda = JDABuilder.createDefault(config.getString("bot_token"))
+                .addEventListeners(Discord2MC())
+                .build()
             val builder = WebhookClientBuilder(config.getString("webhook_url")!!) // or id, token
 
             builder.setThreadFactory { job: Runnable? ->
